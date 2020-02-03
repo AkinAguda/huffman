@@ -1,0 +1,17 @@
+We use sshj library to implement transfer of file from client to Flexware and vice versa.
+Setup a FileTransfer project with sshj library
+Implement file transfer (upload) without security.
+Implement file transfer (download) without security.
+Implement file transfer (upload) with username and password security.
+Implement file transfer (download) with username and password security.
+Implement file transfer (upload) with public/private key security.
+Implement file transfer (download) with public/private key security.
+Setup a RabbitMQ project in Java
+Implement sending “Hello, world!” from Producer to Consumer.
+Implement sending with “Work queue” from Producer to Consumer.
+Implement sending with “Publish and Subscribe” from Producer to Consumer.
+Implement sending with “Routing” from Producer to Consumer.
+Implement sending with “Request/Reply Pattern” from Producer to Consumer.
+Implement sending with “Publisher Confirms” pattern from Producer to Consumer.
+Implement public/private key generation on the fly
+Implement username/password key registration
