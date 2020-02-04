@@ -21,4 +21,11 @@ pub mod functions {
         }
         nodes
     }
+    pub fn sort_nodes<'a, 'b, 'c>(
+        list: &'c mut Vec<Node<'a, 'b, char>>,
+    ) -> &'c mut Vec<Node<'a, 'b, char>> {
+        use std::cmp::Ordering;
+        list.sort_by(|a, b| a.freq.cmp(&b.freq));
+        list
+    }
 }
