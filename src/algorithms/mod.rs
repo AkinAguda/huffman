@@ -1,16 +1,35 @@
 pub mod algorithms {
-    use std::fmt::Display;
-    pub struct Node<'a, 'b, T> {
-        pub value: T,
-        pub freq: i64,
-        pub right: Option<&'a Node<'a, 'b, T>>,
-        pub left: Option<&'b Node<'b, 'b, T>>,
+    #[derive(Debug)]
+    pub enum ValueTypes {
+        Character(char),
+        Number(i64),
     }
-    pub struct Huffman<'a, 'b, T> {
-        pub root: &'a mut Node<'a, 'b, T>,
+    pub struct Node<'a, 'b> {
+        pub value: ValueTypes,
+        pub freq: Option<i64>,
+        pub right: Option<&'a Node<'a, 'b>>,
+        pub left: Option<&'b Node<'a, 'b>>,
     }
-    impl<'a, 'b, T> Node<'a, 'b, T> {
-        pub fn new(value: T, freq: i64) -> Node<'a, 'b, T> {
+    // pub struct Huffman<'a, 'b, T, M> {
+    //     pub root: Option<&'a mut Node<'a, 'b, M, T>>,
+    //     pub new_root: Node<'a, 'b, i64, M>,
+    // }
+    // impl<'a, 'b, T, M> Huffman<'a, 'b, T, M> {
+    //     pub fn new(
+    //         mut node_one: &'b Node<'a, 'b, M, i64>,
+    //         mut node_two: &'b Node<'a, 'b, M, i64>,
+    //     ) -> Huffman<'a, 'b, i64, M> {
+    //         let mut new_root_instance = Node::new(node_one.freq + node_two.freq, 0);
+    //         new_root_instance.left = Some(&node_one);
+    //         new_root_instance.right = Some(&node_two);
+    //         Huffman {
+    //             new_root: new_root_instance,
+    //             root: None,
+    //         }
+    //     }
+    // }
+    impl<'a, 'b> Node<'a, 'b> {
+        pub fn new(value: ValueTypes, freq: Option<i64>) -> Node<'a, 'b> {
             Node {
                 value,
                 freq,
@@ -19,7 +38,10 @@ pub mod algorithms {
             }
         }
         pub fn update_freq(&mut self, value: i64) {
-            self.freq += value;
+            match &self.freq {
+                Some(num) => self.freq = Some(num + value),
+                None => panic!("Frequency Not Set"),
+            }
         }
     }
 }
