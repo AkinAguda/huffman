@@ -43,5 +43,21 @@ pub mod algorithms {
                 None => panic!("Frequency Not Set"),
             }
         }
+        pub fn get_freq(&self) -> i64 {
+            match self.freq {
+                Some(value) => value,
+                None => panic!("Frequency Not Set"),
+            }
+        }
+        pub fn update_int_value(&mut self, value: i64) {
+            match self.value {
+                _ => self.value = ValueTypes::Number(value),
+            }
+        }
+        pub fn update_char_value(&mut self, value: char) {
+            match self.value {
+                _ => self.value = ValueTypes::Character(value),
+            }
+        }
     }
 }

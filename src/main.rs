@@ -1,9 +1,6 @@
 mod algorithms;
 mod functions;
-use algorithms::algorithms::{
-    Node, ValueTypes,
-    ValueTypes::{Character, Number},
-};
+use algorithms::algorithms::{Node, ValueTypes, ValueTypes::Number};
 use functions::functions::{
     // build_huffman,
     get_unique_chars,

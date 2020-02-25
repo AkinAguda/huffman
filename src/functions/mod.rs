@@ -24,18 +24,13 @@ pub mod functions {
         list.sort_by(|a, b| a.freq.cmp(&b.freq));
         list
     }
-    // pub fn build_huffman(list: &Vec<Node>) {
-    //     let mut huffman = Node::new(list[0].freq.unwrap() + list[1].freq.unwrap(), None);
-    //     let mut currentNode = &huffman;
-    //     huffman.right = Some(&list[0]);
-    //     huffman.left = Some(&list[1]);
-    //     for index in 2..list.len() {
-    //         if (list[index].freq.unwrap() > huffman.freq.unwrap()) {
-    //             let newNode = Node::new(list[index].freq.unwrap() + huffman.freq.unwrap(), None);
-    //             newNode.left = Some(&list[index]);
-    //             newNode.right = Some(currentNode);
-    //             let huffman = &newNode;
-    //         }
-    //     }
-    // }
+    pub fn build_huffman(list: &Vec<Node>) {
+        let huffman = Node::new(
+            ValueTypes::Number(list[0].get_freq() + list[1].get_freq()),
+            None,
+        );
+        // for index in 2..list.len() {
+
+        // }
+    }
 }
