@@ -1,17 +1,7 @@
-We use sshj library to implement transfer of file from client to Flexware and vice versa.
-Setup a FileTransfer project with sshj library
-Implement file transfer (upload) without security.
-Implement file transfer (download) without security.
-Implement file transfer (upload) with username and password security.
-Implement file transfer (download) with username and password security.
-Implement file transfer (upload) with public/private key security.
-Implement file transfer (download) with public/private key security.
-Setup a RabbitMQ project in Java
-Implement sending “Hello, world!” from Producer to Consumer.
-Implement sending with “Work queue” from Producer to Consumer.
-Implement sending with “Publish and Subscribe” from Producer to Consumer.
-Implement sending with “Routing” from Producer to Consumer.
-Implement sending with “Request/Reply Pattern” from Producer to Consumer.
-Implement sending with “Publisher Confirms” pattern from Producer to Consumer.
-Implement public/private key generation on the fly
-Implement username/password key registration
+Word Count Tool is incredibly easy to use and can give you almost instantaneous results. It will show you the word count for the number of words, characters, sentences, and paragraphs.
+
+It also works as a character count tool and can be used to perform word count for Google Docs, PDF files, Microsoft Excel, Microsoft Powerpoint, Adobe InDesign, and many more. All you need to do is copy the text from any file types or websites and paste it into the Word Counter Tool input box.
+
+Word Counter Tool can calculate how many words in a paragraph and even calculate the total word count for a novel, essay, or books. There is no limit to how many words you would like to count. It can also be useful if you have a maximum limit to the number of words allowed for an article or blog post you are working on.
+
+Unlike most other word counter tools, our Word Counter Tool does not set any limit to the amount of text you wish to count. It is completely free to use with no limits to the number of times you would like to use it
