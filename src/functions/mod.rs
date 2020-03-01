@@ -25,12 +25,18 @@ pub mod functions {
         list
     }
     pub fn build_huffman(list: &Vec<Node>) {
-        let huffman = Node::new(
+        let mut root_node = Node::new(
             ValueTypes::Number(list[0].get_freq() + list[1].get_freq()),
             None,
         );
-        // for index in 2..list.len() {
-
-        // }
+        for index in 2..list.len() {
+            if root_node.get_value() > list[index].get_freq() {
+                let mut new_root_node = Node::new(
+                    ValueTypes::Number(root_node.get_value() + list[index].get_freq()),
+                    Some(0),
+                );
+                new_root_node.left = Some(&root_node);
+            }
+        }
     }
 }

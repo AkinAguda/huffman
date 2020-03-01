@@ -4,6 +4,7 @@ pub mod algorithms {
         Character(char),
         Number(i64),
     }
+    #[derive(Debug)]
     pub struct Node<'a, 'b> {
         pub value: ValueTypes,
         pub freq: Option<i64>,
@@ -47,6 +48,12 @@ pub mod algorithms {
             match self.freq {
                 Some(value) => value,
                 None => panic!("Frequency Not Set"),
+            }
+        }
+        pub fn get_value(&self) -> i64 {
+            match self.value {
+                ValueTypes::Number(value) => value,
+                _ => panic!("Value not set"),
             }
         }
         pub fn update_int_value(&mut self, value: i64) {
