@@ -20,23 +20,43 @@ pub mod functions {
         }
         nodes
     }
-    pub fn sort_nodes<'a, 'b, 'c>(list: &'c mut Vec<Node<'a, 'b>>) -> &'c mut Vec<Node<'a, 'b>> {
+    pub fn sort_nodes(list: &mut Vec<Node>) -> &mut Vec<Node> {
         list.sort_by(|a, b| a.freq.cmp(&b.freq));
         list
     }
-    pub fn build_huffman(list: &Vec<Node>) {
-        let mut root_node = Node::new(
-            ValueTypes::Number(list[0].get_freq() + list[1].get_freq()),
-            None,
-        );
-        for index in 2..list.len() {
-            if root_node.get_value() > list[index].get_freq() {
-                let mut new_root_node = Node::new(
-                    ValueTypes::Number(root_node.get_value() + list[index].get_freq()),
-                    Some(0),
-                );
-                new_root_node.left = Some(&root_node);
+    pub fn handle_node(node: Option<Box<Node>>, list: &Vec<Node>, iter: u64) -> Box<Node> {
+        if iter == 0 {
+            Box::new(Node::new(
+                ValueTypes::Number(list[0].get_freq() + list[1].get_freq()),
+                None,
+            ))
+        } else {
+            let ptr = *node.unwrap();
+            if ptr.get_value() < list[iter as usize].get_freq() {
+                println!("higher");
+                let mut new_root = Box::new(Node::new(
+                    ValueTypes::Number(
+                        list[iter as usize].get_freq() + list[(iter + 1) as usize].get_freq(),
+                    ),
+                    None,
+                ));
+                new_root.right = Some(Box::new(ptr));
+                new_root
+            } else {
+                println!("higher");
+                let mut new_root = Box::new(Node::new(
+                    ValueTypes::Number(
+                        list[iter as usize].get_freq() + list[(iter + 1) as usize].get_freq(),
+                    ),
+                    None,
+                ));
+                new_root.right = Some(Box::new(ptr));
+                new_root
             }
         }
+    }
+    pub fn build_huffman(list: &mut Vec<Node>) -> Box<Node> {
+        let first = handle_node(None, list, 0);
+        handle_node(Some(first), list, 2)
     }
 }

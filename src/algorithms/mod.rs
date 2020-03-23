@@ -5,32 +5,15 @@ pub mod algorithms {
         Number(i64),
     }
     #[derive(Debug)]
-    pub struct Node<'a, 'b> {
+    pub struct Node {
         pub value: ValueTypes,
         pub freq: Option<i64>,
-        pub right: Option<&'a Node<'a, 'b>>,
-        pub left: Option<&'b Node<'a, 'b>>,
+        pub right: Option<Box<Node>>,
+        pub left: Option<Box<Node>>,
     }
-    // pub struct Huffman<'a, 'b, T, M> {
-    //     pub root: Option<&'a mut Node<'a, 'b, M, T>>,
-    //     pub new_root: Node<'a, 'b, i64, M>,
-    // }
-    // impl<'a, 'b, T, M> Huffman<'a, 'b, T, M> {
-    //     pub fn new(
-    //         mut node_one: &'b Node<'a, 'b, M, i64>,
-    //         mut node_two: &'b Node<'a, 'b, M, i64>,
-    //     ) -> Huffman<'a, 'b, i64, M> {
-    //         let mut new_root_instance = Node::new(node_one.freq + node_two.freq, 0);
-    //         new_root_instance.left = Some(&node_one);
-    //         new_root_instance.right = Some(&node_two);
-    //         Huffman {
-    //             new_root: new_root_instance,
-    //             root: None,
-    //         }
-    //     }
-    // }
-    impl<'a, 'b> Node<'a, 'b> {
-        pub fn new(value: ValueTypes, freq: Option<i64>) -> Node<'a, 'b> {
+
+    impl Node {
+        pub fn new(value: ValueTypes, freq: Option<i64>) -> Node {
             Node {
                 value,
                 freq,
