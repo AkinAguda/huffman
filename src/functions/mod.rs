@@ -24,6 +24,16 @@ pub mod functions {
         list.sort_by(|a, b| b.freq.cmp(&a.freq));
         list
     }
+    #[test]
+    fn sort_nodes_works() {
+        let mut test_vector = vec![
+            Box::new(Node::new(ValueTypes::Character('c'), Some(8))),
+            Box::new(Node::new(ValueTypes::Character('d'), Some(3))),
+            Box::new(Node::new(ValueTypes::Character('k'), Some(2))),
+            Box::new(Node::new(ValueTypes::Number(5), Some(15))),
+        ];
+        assert_eq!(sort_nodes(&mut test_vector)[3].get_freq(), 2);
+    }
     pub fn build_huffman(list: &mut Vec<Box<Node>>) -> &Node {
         if list.len() > 1 {
             let sum = list[0].get_freq() + list[1].get_freq();
