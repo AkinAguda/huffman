@@ -1,5 +1,5 @@
 pub mod algorithms {
-    #[derive(Debug)]
+    #[derive(Debug, Clone, Copy)]
     pub enum ValueTypes {
         Character(char),
         Number(i64),
@@ -33,27 +33,5 @@ pub mod algorithms {
                 None => panic!("Frequency Not Set"),
             }
         }
-        pub fn get_int_value(&self) -> i64 {
-            match self.value {
-                ValueTypes::Number(value) => value,
-                _ => panic!("Value not set"),
-            }
-        }
-        pub fn get_char_value(&self) -> char {
-            match self.value {
-                ValueTypes::Character(value) => value,
-                _ => panic!("Value not set"),
-            }
-        }
-        // pub fn update_int_value(&mut self, value: i64) {
-        //     match self.value {
-        //         _ => self.value = ValueTypes::Number(value),
-        //     }
-        // }
-        // pub fn update_char_value(&mut self, value: char) {
-        //     match self.value {
-        //         _ => self.value = ValueTypes::Character(value),
-        //     }
-        // }
     }
 }

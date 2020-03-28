@@ -1,6 +1,5 @@
 mod algorithms;
 mod functions;
-// use algorithms::algorithms::{Node, ValueTypes, ValueTypes::Number};
 use functions::functions::{build_huffman, get_unique_chars, read_from_file, sort_nodes};
 
 fn main() {
