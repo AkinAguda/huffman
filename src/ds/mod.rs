@@ -1,4 +1,4 @@
-pub mod algorithms {
+pub mod ds {
     #[derive(Debug, Clone, Copy)]
     pub enum ValueTypes {
         Character(char),

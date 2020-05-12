@@ -1,4 +1,4 @@
-mod algorithms;
+mod ds;
 mod functions;
 use functions::functions::{
     build_huffman, decode, encode, get_map, get_unique_chars, read_from_file, sort_nodes,
