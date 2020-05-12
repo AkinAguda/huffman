@@ -1,6 +1,6 @@
 pub mod functions {
-    use super::super::algorithms;
-    use algorithms::algorithms::{Node, ValueTypes};
+    use super::super::ds;
+    use ds::ds::{Node, ValueTypes};
     use std::fs;
     pub fn read_from_file(url: &str) -> String {
         fs::read_to_string(url).unwrap()
